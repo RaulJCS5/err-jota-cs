@@ -1,4 +1,4 @@
-import { useMemo,useState } from 'react'
+import { useEffect, useMemo,useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Projects } from "./pages/Projects";
 import { About } from "./pages/About";
@@ -10,7 +10,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const lightTheme = "light"
+  const darkTheme = "dark"
+  const [mode, setMode] = useState<'light' | 'dark'>(lightTheme);
   const theme = useMemo(
     () =>
       createTheme({
@@ -21,8 +23,23 @@ function App() {
     [mode],
   );
   function toggleColorMode(){
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+    if (mode === darkTheme) {
+      localStorage.setItem("theme", lightTheme)
+      setMode(lightTheme)
+    } else {
+      localStorage.setItem("theme", darkTheme)
+      setMode(darkTheme)
+    }
   }
+  useEffect(()=>{
+    if(localStorage.getItem("theme")==null){
+      localStorage.setItem("theme", lightTheme)
+      setMode(lightTheme)
+    }else{
+      const localTheme = localStorage.getItem("theme")===lightTheme?lightTheme:darkTheme
+      setMode(localTheme)
+    }
+  },[])
 
   return (
     <ThemeProvider theme={theme}>
