@@ -16,7 +16,7 @@ import Button from '@mui/material/Button';
 import { Theme } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useNavigate } from 'react-router';
+import { Outlet, useNavigate } from 'react-router';
 
 interface Props {
     /**
@@ -67,7 +67,7 @@ export default function DrawerAppBar(props: Props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box component="main" sx={{ paddingTop: '64px' }}>
             <CssBaseline />
             <AppBar component="nav">
                 <Toolbar>
@@ -120,6 +120,7 @@ export default function DrawerAppBar(props: Props) {
                     {drawer}
                 </Drawer>
             </Box>
+            <Outlet></Outlet>
         </Box>
     );
 }
