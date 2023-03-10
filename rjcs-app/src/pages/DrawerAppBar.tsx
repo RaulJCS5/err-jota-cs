@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 import { Theme } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useNavigate } from 'react-router';
 
 interface Props {
     /**
@@ -33,7 +34,7 @@ const navItems = ['Home', 'About', 'Contact', 'Projects'];
 export default function DrawerAppBar(props: Props) {
     const { toggleColorMode, theme, window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
+    const navigate = useNavigate()
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
@@ -47,7 +48,11 @@ export default function DrawerAppBar(props: Props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton sx={{ textAlign: 'center' }} onClick={(e) => {
+                            e.preventDefault()
+                            const itemLower = item.toLowerCase()
+                            navigate(itemLower==='home'?'/':itemLower)
+                        }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -84,7 +89,11 @@ export default function DrawerAppBar(props: Props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
+                            <Button key={item} sx={{ color: '#fff' }} onClick={(e) => {
+                                e.preventDefault()
+                                const itemLower = item.toLowerCase()
+                                navigate(itemLower==='home'?'/':itemLower)
+                            }}>
                                 {item}
                             </Button>
                         ))}
