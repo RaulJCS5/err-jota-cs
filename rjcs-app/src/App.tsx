@@ -8,6 +8,7 @@ import { Layout } from "./pages/Layout";
 import { NoPage } from "./pages/NoPage";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import DrawerAppBar from './pages/DrawerAppBar';
 
 function App() {
   const lightTheme = "light"
@@ -46,7 +47,7 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout toggleColorMode={toggleColorMode} theme={theme} />}>
+          <Route path="/" element={<DrawerAppBar toggleColorMode={toggleColorMode} theme={theme} />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
