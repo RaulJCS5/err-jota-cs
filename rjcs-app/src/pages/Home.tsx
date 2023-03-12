@@ -6,7 +6,7 @@ import { Avatar, Box, Button, CardActionArea, Grid } from '@mui/material';
 import me from './ME.jpg'
 import { useNavigate } from 'react-router';
 
-const styleButton = {
+export const styleButton = {
   borderRadius: 5,
   border: "2px solid",
   fontWeight: "bold",
@@ -31,12 +31,12 @@ function FormRow1() {
         </Button>
       </Grid>
       <Grid item>
-        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Problem-Solving</Typography>
         </Button>
       </Grid>
       <Grid item>
-        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="info" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Technical Skills</Typography>
         </Button>
       </Grid>
@@ -47,7 +47,7 @@ function FormRow2() {
   return (
     <React.Fragment>
       <Grid item>
-        <Button color="info" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Decision-Making</Typography>
         </Button>
       </Grid>
@@ -68,17 +68,17 @@ function FormRow3() {
   return (
     <React.Fragment>
       <Grid item>
-        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Communication</Typography>
         </Button>
       </Grid>
       <Grid item>
-        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="info" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Team Work</Typography>
         </Button>
       </Grid>
       <Grid item>
-        <Button color="warning" sx={styleButton} disableTouchRipple variant="outlined">
+        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
           <Typography fontSize={10} fontWeight="bold" >Object Oriented Programming (OOP)</Typography>
         </Button>
       </Grid>

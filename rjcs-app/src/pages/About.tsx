@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react'
+import { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -15,11 +15,91 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Box } from '@mui/material';
+import { Box, Button, CardActionArea, Grid } from '@mui/material';
 import me from './ME.jpg'
+import { styleButton } from './Home';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
+}
+
+function FormRow1() {
+  return (
+    <React.Fragment>
+      <Grid item>
+        <Button color="secondary" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >Kotlin</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >Java</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="info" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >C</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >C#</Typography>
+        </Button>
+      </Grid>
+    </React.Fragment>
+  );
+}
+function FormRow2() {
+  return (
+    <React.Fragment>
+      <Grid item>
+        <Button color="warning" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >HTML</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="secondary" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >JavaScript</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >TypeScript</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="info" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >T-SQL/SQL</Typography>
+        </Button>
+      </Grid>
+    </React.Fragment>
+  );
+}
+function FormRow3() {
+  return (
+    <React.Fragment>
+      <Grid item>
+        <Button color="success" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >Spring</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="warning" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >React JS/TS</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="secondary" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >Node JS</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button color="error" sx={styleButton} disableTouchRipple variant="outlined">
+          <Typography fontSize={8} fontWeight="bold" >.NET</Typography>
+        </Button>
+      </Grid>
+    </React.Fragment>
+  );
 }
 
 const ExpandMore = styled((props: ExpandMoreProps) => {
@@ -35,8 +115,8 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = useState(false);
-  const [heart,setHeart] = useState(false)
-  const [share,setShare] = useState(false)
+  const [heart, setHeart] = useState(false)
+  const [share, setShare] = useState(false)
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -55,15 +135,30 @@ export default function RecipeReviewCard() {
         title="Raul Santos"
         subheader="November 05, 1998"
       />
+
       <CardContent>
-        <Typography variant="body2" color="text.secondary">Programming Languages Skill</Typography>
+        <CardActionArea disableTouchRipple sx={{ borderRadius: 5, padding: '10px' }}>
+          <Typography variant="body2" sx={{ marginBottom: "10px" }} fontWeight="bold" color="text.secondary">Programming Languages Skill</Typography>
+          <Grid container spacing={1}>
+            <Grid container item spacing={1}>
+              <FormRow1 />
+            </Grid>
+            <Grid container item spacing={1}>
+              <FormRow2 />
+            </Grid>
+            <Grid container item spacing={1}>
+              <FormRow3 />
+            </Grid>
+          </Grid>
+        </CardActionArea>
       </CardContent>
+
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" onClick={()=>{setHeart(!heart)}}>
-          <FavoriteIcon sx={{color:heart===false?'inherit':'red'}} />
+        <IconButton aria-label="add to favorites" onClick={() => { setHeart(!heart) }}>
+          <FavoriteIcon sx={{ color: heart === false ? 'inherit' : 'red' }} />
         </IconButton>
-        <IconButton aria-label="share" onClick={()=>{setShare(!share)}}>
-          <ShareIcon sx={{color:share===false?'inherit':'green'}} />
+        <IconButton aria-label="share" onClick={() => { setShare(!share) }}>
+          <ShareIcon sx={{ color: share === false ? 'inherit' : 'green' }} />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -92,7 +187,7 @@ export const About = () => {
       justifyContent: "center",
       alignItems: "center",
     }}>
-    <RecipeReviewCard></RecipeReviewCard>
+      <RecipeReviewCard></RecipeReviewCard>
     </Box>
   )
 }
