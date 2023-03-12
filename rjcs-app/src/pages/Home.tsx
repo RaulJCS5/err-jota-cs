@@ -132,7 +132,6 @@ export const Home = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      height: "100vh", // adjust as needed
     }}>
       <ActionAreaCard></ActionAreaCard>
     </Box>

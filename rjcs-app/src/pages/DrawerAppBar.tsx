@@ -120,7 +120,9 @@ export default function DrawerAppBar(props: Props) {
                     {drawer}
                 </Drawer>
             </Box>
-            <Outlet></Outlet>
+            <Box sx={{ marginTop: '64px' }}>
+                <Outlet></Outlet>
+            </Box>
         </Box>
     );
 }
