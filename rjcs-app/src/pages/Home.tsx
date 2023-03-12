@@ -91,6 +91,7 @@ export default function ActionAreaCard() {
   return (
     <Card sx={{
       maxWidth: 500,
+      borderRadius:5
     }}>
       <CardContent>
         <CardContent sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -100,8 +101,8 @@ export default function ActionAreaCard() {
           </Box>
           <Avatar src={me} sx={{ width: 200, height: 200 }}></Avatar>
         </CardContent>
-        <Box sx={{ padding: '5px' }}>
-          <CardActionArea disableTouchRipple sx={{ borderRadius: '5px', padding: '10px' }}>
+        <Box sx={{ marginBottom:'10px' }}>
+          <CardActionArea disableTouchRipple sx={{ borderRadius: 5, padding: '10px' }}>
             <Typography variant='h6' sx={{ marginBottom: "10px" }} fontWeight="bold">Skill Set</Typography>
             <Grid container spacing={1}>
               <Grid container item spacing={1}>
