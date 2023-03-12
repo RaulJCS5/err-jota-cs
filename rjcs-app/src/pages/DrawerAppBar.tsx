@@ -17,6 +17,7 @@ import { Theme } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Outlet, useNavigate } from 'react-router';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 interface Props {
     /**
@@ -51,7 +52,7 @@ export default function DrawerAppBar(props: Props) {
                         <ListItemButton sx={{ textAlign: 'center' }} onClick={(e) => {
                             e.preventDefault()
                             const itemLower = item.toLowerCase()
-                            navigate(itemLower==='home'?'/':itemLower)
+                            navigate(itemLower === 'home' ? '/' : itemLower)
                         }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
@@ -83,7 +84,8 @@ export default function DrawerAppBar(props: Props) {
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
+                        onClick={() => { navigate('/') }}
                     >
                         RJCS
                     </Typography>
@@ -92,7 +94,7 @@ export default function DrawerAppBar(props: Props) {
                             <Button key={item} sx={{ color: '#fff' }} onClick={(e) => {
                                 e.preventDefault()
                                 const itemLower = item.toLowerCase()
-                                navigate(itemLower==='home'?'/':itemLower)
+                                navigate(itemLower === 'home' ? '/' : itemLower)
                             }}>
                                 {item}
                             </Button>
