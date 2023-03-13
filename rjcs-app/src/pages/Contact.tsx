@@ -6,6 +6,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Grid } from '@mui/material';
 
+export const changeColor = ()=>localStorage.getItem("theme")==='light'?undefined:'black'
+
 export default function ActionAreaCard() {
   return (
     <Card sx={{ maxWidth: 600, borderRadius: 5 }}>
@@ -14,31 +16,31 @@ export default function ActionAreaCard() {
           <Typography sx={{ marginBottom: 5 }} variant='h4'>Follow Me On</Typography>
           <Grid container spacing={1}>
             <Grid item>
-              <a href="mailto:rauljosesantos@hotmail.com" target="blank" rel="noopener"><SocialIcon network='email'></SocialIcon></a>
+              <a href="mailto:rauljosesantos@hotmail.com" target="blank" rel="noopener"><SocialIcon bgColor={changeColor()} fgColor='white' network='email'></SocialIcon></a>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://twitter.com/rauljosesan'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://twitter.com/rauljosesan'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://www.instagram.com/rauljcsantos'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://www.instagram.com/rauljcsantos'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://soundcloud.com/user-692546360'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://soundcloud.com/user-692546360'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://github.com/RaulJCS5'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://github.com/RaulJCS5'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://discordapp.com/users/368011779760193537'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://discordapp.com/users/368011779760193537'></SocialIcon>
             </Grid>
             <Grid item>
-              <SocialIcon url='https://rauljcs5.github.io/' network='sharethis'></SocialIcon>
+              <SocialIcon bgColor={changeColor()} fgColor='white' url='https://rauljcs5.github.io/' network='sharethis'></SocialIcon>
             </Grid>
           </Grid>
         </Box>
