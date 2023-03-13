@@ -19,9 +19,11 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Outlet, useNavigate } from 'react-router';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { SocialIcon } from 'react-social-icons';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 
-export const changeBG = ()=>localStorage.getItem("theme")==='light'?'#fff':'#121212'
-export const changeFG = ()=>localStorage.getItem("theme")==='light'?'#121212':'#fff'
+export const changeBG = () => localStorage.getItem("theme") === 'light' ? '#fff' : '#121212'
+export const changeFG = () => localStorage.getItem("theme") === 'light' ? '#121212' : '#fff'
 
 interface Props {
     /**
@@ -131,7 +133,21 @@ export default function DrawerAppBar(props: Props) {
             </Box>
             <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
                 <BottomNavigation showLabels>
-                    display:'flex',
+                    <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 10 }}>
+                        <Typography variant='body2' sx={{ color: 'text.secondary' }}>Are you enjoying?</Typography>
+                        <Box sx={{marginLeft:1}}>
+                            <IconButton size='small'>
+                                <ThumbUpIcon fontSize='small'></ThumbUpIcon>
+                            </IconButton>
+                            <IconButton size='small'>
+                                <ThumbDownIcon fontSize='small'></ThumbDownIcon>
+                            </IconButton>
+                        </Box>
+                    </Box>
+                    <Box
+                        component="div"
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                    ></Box>
                     <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://github.com/RaulJCS5'></SocialIcon>
                     <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
                     <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://twitter.com/rauljosesan'></SocialIcon>
