@@ -81,14 +81,12 @@ export default function DrawerAppBar(props: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
-                        variant="h6"
+                    <RocketLaunchIcon sx={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}></RocketLaunchIcon>
+                    <Typography sx={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}>RJCS</Typography>
+                    <Box
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
-                        onClick={() => { navigate('/') }}
-                    >
-                        RJCS
-                    </Typography>
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                    ></Box>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button key={item} sx={{ color: '#fff' }} onClick={(e) => {
