@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -30,18 +31,28 @@ function FormRow() {
 
 export default function NestedGrid() {
   return (
-    <Box sx={{ flexGrow: 1, marginLeft:3, marginRight:3, }}>
-      <Grid container spacing={1}>
-        <Grid container item spacing={3}>
-          <FormRow />
+    <Box sx={{ flexGrow: 1, marginLeft: 3, marginRight: 3, }}>
+      <Typography variant='h5' sx={{marginBottom:2}}>Open Source Projects</Typography>
+      <Typography color='text.secondary' sx={{ display: 'flex', justifyContent: 'center' }}>College Projects</Typography>
+      <Box
+        borderBottom={2}
+        borderRadius={1}
+        color='text.secondary'
+        sx={{marginBottom:2}}
+      />
+      <Box>
+        <Grid container spacing={1}>
+          <Grid container item spacing={3}>
+            <FormRow />
+          </Grid>
+          <Grid container item spacing={3}>
+            <FormRow />
+          </Grid>
+          <Grid container item spacing={3}>
+            <FormRow />
+          </Grid>
         </Grid>
-        <Grid container item spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item spacing={3}>
-          <FormRow />
-        </Grid>
-      </Grid>
+      </Box>
     </Box>
   );
 }
