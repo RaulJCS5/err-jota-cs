@@ -135,7 +135,7 @@ export default function DrawerAppBar(props: Props) {
                 <BottomNavigation showLabels>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 10 }}>
                         <Typography variant='body2' sx={{ color: 'text.secondary' }}>Are you enjoying?</Typography>
-                        <Box sx={{marginLeft:1}}>
+                        <Box sx={{ marginLeft: 1 }}>
                             <IconButton size='small'>
                                 <ThumbUpIcon fontSize='small'></ThumbUpIcon>
                             </IconButton>
@@ -144,15 +144,14 @@ export default function DrawerAppBar(props: Props) {
                             </IconButton>
                         </Box>
                     </Box>
-                    <Box
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    ></Box>
-                    <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://github.com/RaulJCS5'></SocialIcon>
-                    <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
-                    <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://twitter.com/rauljosesan'></SocialIcon>
-                    <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.instagram.com/rauljcsantos'></SocialIcon>
-                    <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
+                    <Box component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
+                    <Box sx={{marginRight:2}}>
+                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://github.com/RaulJCS5'></SocialIcon>
+                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
+                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://twitter.com/rauljosesan'></SocialIcon>
+                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.instagram.com/rauljcsantos'></SocialIcon>
+                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
+                    </Box>
                 </BottomNavigation>
             </Paper>
         </Box>
