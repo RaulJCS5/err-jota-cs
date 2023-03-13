@@ -89,8 +89,8 @@ export default function NestedGrid() {
         color='text.secondary'
         sx={{ marginBottom: 2 }}
       />
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Typography color='text.secondary'>Currently Empty</Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom:50 }}>
+        <Typography variant='body2' color='text.secondary'>New Projects Coming Soon</Typography>
       </Box>
     </Box>
   );

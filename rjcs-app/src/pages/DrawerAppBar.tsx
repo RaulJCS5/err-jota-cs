@@ -21,6 +21,8 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { SocialIcon } from 'react-social-icons';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import { useState } from 'react';
+import ThumbUp from '@mui/icons-material/ThumbUp';
 
 export const changeBG = () => localStorage.getItem("theme") === 'light' ? '#fff' : '#121212'
 export const changeFG = () => localStorage.getItem("theme") === 'light' ? '#121212' : '#fff'
@@ -40,7 +42,9 @@ const navItems = ['Home', 'About', 'Contact', 'Projects'];
 
 export default function DrawerAppBar(props: Props) {
     const { toggleColorMode, theme, window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [thumbsUp, setThumbsUp] = useState(false);
+    const [thumbsDown, setThumbsDown] = useState(false);
     const navigate = useNavigate()
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -136,16 +140,16 @@ export default function DrawerAppBar(props: Props) {
                     <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 10 }}>
                         <Typography variant='body2' sx={{ color: 'text.secondary' }}>Are you enjoying?</Typography>
                         <Box sx={{ marginLeft: 1 }}>
-                            <IconButton size='small'>
-                                <ThumbUpIcon fontSize='small'></ThumbUpIcon>
+                            <IconButton size='small' onClick={() => { setThumbsUp(!thumbsUp); setThumbsDown(false) }}>
+                                <ThumbUpIcon color={!thumbsUp ? undefined : 'success'} fontSize='small'></ThumbUpIcon>
                             </IconButton>
-                            <IconButton size='small'>
-                                <ThumbDownIcon fontSize='small'></ThumbDownIcon>
+                            <IconButton size='small' onClick={() => { setThumbsDown(!thumbsDown); setThumbsUp(false) }}>
+                                <ThumbDownIcon color={!thumbsDown ? undefined : 'error'} fontSize='small'></ThumbDownIcon>
                             </IconButton>
                         </Box>
                     </Box>
                     <Box component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
-                    <Box sx={{marginRight:2}}>
+                    <Box sx={{ marginRight: 2 }}>
                         <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://github.com/RaulJCS5'></SocialIcon>
                         <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
                         <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://twitter.com/rauljosesan'></SocialIcon>
