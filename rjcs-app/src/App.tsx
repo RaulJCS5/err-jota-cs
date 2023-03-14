@@ -47,7 +47,7 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<DrawerAppBar toggleColorMode={toggleColorMode} theme={theme} />}>
+          <Route path="/err-jota-cs" element={<DrawerAppBar toggleColorMode={toggleColorMode} theme={theme} />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />

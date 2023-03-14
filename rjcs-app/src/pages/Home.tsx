@@ -118,8 +118,8 @@ export default function ActionAreaCard() {
           </CardActionArea>
         </Box>
         <Box sx={{ display: "flex", gap: "10px" }}>
-          <Button sx={styleNavigateButtons} color='inherit' onClick={() => { navigate('/about') }} variant="outlined">About Me</Button>
-          <Button sx={styleNavigateButtons} color='inherit' onClick={() => { navigate('/contact') }} variant="outlined">Contact</Button>
+          <Button sx={styleNavigateButtons} color='inherit' onClick={() => { navigate('/err-jota-cs/about') }} variant="outlined">About Me</Button>
+          <Button sx={styleNavigateButtons} color='inherit' onClick={() => { navigate('/err-jota-cs/contact') }} variant="outlined">Contact</Button>
         </Box>
 
       </CardContent>

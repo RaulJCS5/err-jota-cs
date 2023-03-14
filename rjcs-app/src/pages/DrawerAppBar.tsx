@@ -62,7 +62,7 @@ export default function DrawerAppBar(props: Props) {
                         <ListItemButton sx={{ textAlign: 'center' }} onClick={(e) => {
                             e.preventDefault()
                             const itemLower = item.toLowerCase()
-                            navigate(itemLower === 'home' ? '/' : itemLower)
+                            navigate(itemLower === 'home' ? '/err-jota-cs' : itemLower)
                         }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
@@ -92,8 +92,8 @@ export default function DrawerAppBar(props: Props) {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <RocketLaunchIcon sx={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}></RocketLaunchIcon>
-                        <Typography sx={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}>RJCS</Typography>
+                        <RocketLaunchIcon sx={{ cursor: 'pointer' }} onClick={() => { navigate('/err-jota-cs') }}></RocketLaunchIcon>
+                        <Typography sx={{ cursor: 'pointer' }} onClick={() => { navigate('/err-jota-cs') }}>RJCS</Typography>
                         <Box
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -103,7 +103,7 @@ export default function DrawerAppBar(props: Props) {
                                 <Button key={item} sx={{ color: '#fff' }} onClick={(e) => {
                                     e.preventDefault()
                                     const itemLower = item.toLowerCase()
-                                    navigate(itemLower === 'home' ? '/' : itemLower)
+                                    navigate(itemLower === 'home' ? '/err-jota-cs' : itemLower)
                                 }}>
                                     {item}
                                 </Button>
