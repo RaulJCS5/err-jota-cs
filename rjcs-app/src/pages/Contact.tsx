@@ -17,7 +17,7 @@ export default function ActionAreaCard() {
   return (
     <Card sx={{ maxWidth: 600, borderRadius: 5 }}>
       <CardContent>
-        <Typography sx={{ marginBottom: 5 }} variant='h4'>Find Me On</Typography>
+        <Typography sx={{ marginBottom: 5 }} variant='h4'>Follow Me On</Typography>
         <Grid sx={{ display: 'flex', justifyContent: 'center' }} container spacing={1}>
           <Grid item>
             <IconButton onClick={() => handleClick('https://www.linkedin.com/in/rauljosecsantos/')}>

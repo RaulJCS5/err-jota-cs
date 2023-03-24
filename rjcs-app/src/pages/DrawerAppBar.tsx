@@ -154,24 +154,24 @@ export default function DrawerAppBar(props: Props) {
                         </Box>
                     </Box>
                     <Box component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
-                    <Box sx={{ marginRight: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', marginRight:2 }}>
                         <IconButton onClick={() => handleClick('https://www.linkedin.com/in/rauljosecsantos/')}>
-                            <LinkedInIcon />
+                            <LinkedInIcon fontSize='small' />
                         </IconButton>
                         <IconButton onClick={() => handleClick('https://github.com/RaulJCS5')}>
-                            <GitHubIcon />
+                            <GitHubIcon fontSize='small' />
                         </IconButton>
                         <IconButton onClick={() => handleClick('https://twitter.com/rauljosesan')}>
-                            <TwitterIcon />
+                            <TwitterIcon fontSize='small' />
                         </IconButton>
                         <IconButton onClick={() => handleClick('https://www.facebook.com/raul.jose.35/')}>
-                            <FacebookIcon />
+                            <FacebookIcon fontSize='small' />
                         </IconButton>
                         <IconButton onClick={() => handleClick('https://www.instagram.com/rauljcsantos')}>
-                            <InstagramIcon />
+                            <InstagramIcon fontSize='small' />
                         </IconButton>
                         <IconButton onClick={() => handleClick('mailto:rauljosesantos@hotmail.com')}>
-                            <EmailIcon />
+                            <EmailIcon fontSize='small' />
                         </IconButton>
                     </Box>
                 </BottomNavigation>
