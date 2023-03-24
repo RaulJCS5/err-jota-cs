@@ -18,14 +18,19 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Outlet, useNavigate } from 'react-router';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { SocialIcon } from 'react-social-icons';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useState } from 'react';
-import ThumbUp from '@mui/icons-material/ThumbUp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub'
+import EmailIcon from '@mui/icons-material/Email'
 
-export const changeBG = () => localStorage.getItem("theme") === 'light' ? '#fff' : '#121212'
-export const changeFG = () => localStorage.getItem("theme") === 'light' ? '#121212' : '#fff'
+export const handleClick = (url: string) => {
+    window.location.href = url;
+};
 
 interface Props {
     /**
@@ -150,11 +155,24 @@ export default function DrawerAppBar(props: Props) {
                     </Box>
                     <Box component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
                     <Box sx={{ marginRight: 2 }}>
-                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://github.com/RaulJCS5'></SocialIcon>
-                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
-                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://twitter.com/rauljosesan'></SocialIcon>
-                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.instagram.com/rauljcsantos'></SocialIcon>
-                        <SocialIcon fgColor={changeFG()} bgColor={changeBG()} url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
+                        <IconButton onClick={() => handleClick('https://www.linkedin.com/in/rauljosecsantos/')}>
+                            <LinkedInIcon />
+                        </IconButton>
+                        <IconButton onClick={() => handleClick('https://github.com/RaulJCS5')}>
+                            <GitHubIcon />
+                        </IconButton>
+                        <IconButton onClick={() => handleClick('https://twitter.com/rauljosesan')}>
+                            <TwitterIcon />
+                        </IconButton>
+                        <IconButton onClick={() => handleClick('https://www.facebook.com/raul.jose.35/')}>
+                            <FacebookIcon />
+                        </IconButton>
+                        <IconButton onClick={() => handleClick('https://www.instagram.com/rauljcsantos')}>
+                            <InstagramIcon />
+                        </IconButton>
+                        <IconButton onClick={() => handleClick('mailto:rauljosesantos@hotmail.com')}>
+                            <EmailIcon />
+                        </IconButton>
                     </Box>
                 </BottomNavigation>
             </Paper>

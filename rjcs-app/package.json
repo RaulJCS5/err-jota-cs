@@ -1,5 +1,5 @@
 {
-  "homepage":"http://rauljcs5.github.io/err-jota-cs",
+  "homepage": "http://rauljcs5.github.io/err-jota-cs",
   "name": "rjcs-app",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,6 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.8.2",
     "react-scripts": "5.0.1",
-    "react-social-icons": "^5.15.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },

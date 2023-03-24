@@ -1,11 +1,17 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
-import { SocialIcon } from 'react-social-icons';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Grid } from '@mui/material';
-import { changeBG, changeFG } from './DrawerAppBar';
+import { Grid, IconButton } from '@mui/material';
+import { handleClick } from './DrawerAppBar';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub'
+import EmailIcon from '@mui/icons-material/Email'
+
 
 export default function ActionAreaCard() {
   return (
@@ -14,31 +20,34 @@ export default function ActionAreaCard() {
         <Typography sx={{ marginBottom: 5 }} variant='h4'>Find Me On</Typography>
         <Grid sx={{ display: 'flex', justifyContent: 'center' }} container spacing={1}>
           <Grid item>
-            <a href="mailto:rauljosesantos@hotmail.com" target="blank" rel="noopener"><SocialIcon fgColor='white' network='email'></SocialIcon></a>
+            <IconButton onClick={() => handleClick('https://www.linkedin.com/in/rauljosecsantos/')}>
+              <LinkedInIcon />
+            </IconButton>
           </Grid>
           <Grid item>
-            <SocialIcon fgColor='white' url='https://soundcloud.com/user-692546360'></SocialIcon>
+            <IconButton onClick={() => handleClick('https://github.com/RaulJCS5')}>
+              <GitHubIcon />
+            </IconButton>
           </Grid>
           <Grid item>
-            <SocialIcon fgColor='white' url='https://rauljcs5.github.io/' network='sharethis'></SocialIcon>
+            <IconButton onClick={() => handleClick('https://twitter.com/rauljosesan')}>
+              <TwitterIcon />
+            </IconButton>
           </Grid>
           <Grid item>
-            <SocialIcon fgColor='white' url='https://github.com/RaulJCS5'></SocialIcon>
+            <IconButton onClick={() => handleClick('https://www.facebook.com/raul.jose.35/')}>
+              <FacebookIcon />
+            </IconButton>
           </Grid>
           <Grid item>
-            <SocialIcon fgColor='white' url='https://www.linkedin.com/in/rauljosecsantos/'></SocialIcon>
+            <IconButton onClick={() => handleClick('https://www.instagram.com/rauljcsantos')}>
+              <InstagramIcon />
+            </IconButton>
           </Grid>
           <Grid item>
-            <SocialIcon fgColor='white' url='https://twitter.com/rauljosesan'></SocialIcon>
-          </Grid>
-          <Grid item>
-            <SocialIcon fgColor='white' url='https://www.instagram.com/rauljcsantos'></SocialIcon>
-          </Grid>
-          <Grid item>
-            <SocialIcon fgColor='white' url='https://discordapp.com/users/368011779760193537'></SocialIcon>
-          </Grid>
-          <Grid item>
-            <SocialIcon fgColor='white' url='https://www.facebook.com/raul.jose.35/'></SocialIcon>
+            <IconButton onClick={() => handleClick('mailto:rauljosesantos@hotmail.com')}>
+              <EmailIcon />
+            </IconButton>
           </Grid>
         </Grid>
       </CardContent>
