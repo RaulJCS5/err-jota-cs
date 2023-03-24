@@ -17,7 +17,7 @@ import { BottomNavigation, BottomNavigationAction, Paper, Theme } from '@mui/mat
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Outlet, useNavigate } from 'react-router';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import walter from './icons8-walter-white-96.png'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useState } from 'react';
@@ -97,7 +97,7 @@ export default function DrawerAppBar(props: Props) {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <RocketLaunchIcon sx={{ cursor: 'pointer' }} onClick={() => { navigate('/err-jota-cs') }}></RocketLaunchIcon>
+                        <img style={{ width: '40px', height: '40px', cursor: 'pointer' }} alt='walter-white' src={walter} onClick={() => { navigate('/err-jota-cs') }} ></img>
                         <Typography sx={{ cursor: 'pointer' }} onClick={() => { navigate('/err-jota-cs') }}>RJCS</Typography>
                         <Box
                             component="div"
